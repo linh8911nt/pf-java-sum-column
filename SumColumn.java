@@ -13,7 +13,7 @@ public class SumColumn {
         int[][] matrix = new int[row][col];
         for (row = 0; row < matrix.length; row++) {
             for (col = 0; col < matrix[row].length; col++) {
-                System.out.println("Element row " + row + " colum " + col);
+                System.out.println("Element (" + row + " , " + col + ")");
                 matrix[row][col] = input.nextInt();
             }
         }
@@ -21,13 +21,14 @@ public class SumColumn {
         int sumCol = input.nextInt();
         int sum = 0;
 
-        if (sumCol > matrix.length)
-            System.out.println("Wrong column!");
-        else {
+        if (sumCol <= matrix.length){
             for (row = 0; row < matrix.length; row++) {
                 sum += matrix[row][sumCol];
             }
         }
+        else
+            System.out.println("Wrong column!");
+        System.out.println("Matrix: ");
         for (row = 0; row < matrix.length; row++) {
             for (col = 0; col < matrix[row].length; col++) {
                 System.out.print(matrix[row][col] + " ");
